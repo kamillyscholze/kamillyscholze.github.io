@@ -1,12 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif; ;
+      background-color: #f3e5f5; /* lilás claro */
+    }
+
+    header {
+      background-color: rgb(151, 207, 200);
+      color: black;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: whitesmoke; /* roxo claro ao passar o mouse */
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: whitesmoke;
+      padding: 10px 20px;
+    }
+
+    .mobile-menu a {
+      padding: 10px 0;
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid whitesmoke;
+    }
+
+    .mobile-menu a:hover {
+      color: #6fa182;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    body {
+    margin: 0;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    background-image: url('../home/img/fundogato.png'); /* Caminho da imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-attachment: fixed; /* Fixa a imagem ao rolar a página */
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      margin-top: auto; /* Isso faz o rodapé ficar na parte inferior */
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #ce93d8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    }
+
+
+  </style>
 </head>
 <body>
-    kaaaamiil
+
+<header>
+  <div class="logo">Kamilly Scholze</div>
+
+  <!-- Ícone de menu para mobile -->
+  <span class="material-icons menu-icon" onclick="toggleMenu()">menu</span>
+
+  <!-- Menu normal para desktop -->
+  <nav class="desktop-menu">
+    <a href="#contato">Contato</a>
+    <a href="#atividades">Atividades</a>
+    <a href="#sobre">Sobre Mim</a>
+  </nav>
+</header>
+
+<footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Kamilly Scholze. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#contato">Contato</a>
+        <a href="#atividades">Atividades</a>
+        <a href="#sobre">Sobre Mim</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#contato">Contato</a>
+  <a href="#atividades">Atividades</a>
+  <a href="#sobre">Sobre Mim</a>
+</div>
+
+
+<!-- JavaScript para abrir/fechar o menu -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
